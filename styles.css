@@ -1125,15 +1125,20 @@ h2 {
   .nav-group {
     gap: 0.8rem;
     flex: 0 0 auto;
+    align-items: flex-start;
   }
 
   .nav-dropdown {
     position: static;
     min-width: 0;
-    padding: 0;
-    display: inline-flex;
-    gap: 0.8rem;
+    width: 100%;
+    padding: 0.2rem 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.1rem;
     border: 0;
+    border-top: 1px solid rgba(248, 242, 230, 0.16);
     background: transparent;
     box-shadow: none;
     backdrop-filter: none;
@@ -1148,10 +1153,17 @@ h2 {
   }
 
   .nav-dropdown a {
-    padding: 0.45rem 0;
+    width: 100%;
+    padding: 0.5rem 0 0.65rem;
     border-radius: 0;
+    border-bottom: 1px solid rgba(248, 242, 230, 0.16);
     font-size: 0.94em;
     opacity: 0.74;
+  }
+
+  .nav-dropdown a:last-child {
+    border-bottom: 0;
+    padding-bottom: 0.2rem;
   }
 
   .page-hero {
