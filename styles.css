@@ -1123,18 +1123,18 @@ h2 {
   }
 
   .nav-group {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.15rem;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 0.35rem;
     flex: 0 0 auto;
-    width: 100%;
   }
 
   .nav-group > .nav-link {
-    display: block;
-    width: 100%;
-    padding: 0.35rem 0 0.55rem;
+    display: inline-flex;
+    width: auto;
+    padding: 0.35rem 0.1rem 0.55rem;
     border-bottom: 0;
   }
 
@@ -1156,12 +1156,13 @@ h2 {
   .nav-dropdown {
     position: static;
     min-width: 0;
-    width: 100%;
+    width: auto;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.2rem;
     border: 0;
     background: transparent;
     box-shadow: none;
@@ -1177,8 +1178,8 @@ h2 {
   }
 
   .nav-dropdown a {
-    width: 100%;
-    padding: 0.5rem 0 0.65rem;
+    width: auto;
+    padding: 0.35rem 0.2rem 0.5rem;
     border-radius: 0;
     border-bottom: 1px solid rgba(248, 242, 230, 0.16);
     font-size: 0.94em;
@@ -1186,8 +1187,8 @@ h2 {
   }
 
   .nav-dropdown a:last-child {
-    border-bottom: 0;
-    padding-bottom: 0.2rem;
+    border-bottom: 1px solid rgba(248, 242, 230, 0.16);
+    padding-bottom: 0.5rem;
   }
 
   .page-hero {
