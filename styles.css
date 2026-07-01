@@ -1123,22 +1123,46 @@ h2 {
   }
 
   .nav-group {
-    gap: 0.8rem;
-    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
     align-items: flex-start;
+    gap: 0.15rem;
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  .nav-group > .nav-link {
+    display: block;
+    width: 100%;
+    padding: 0.35rem 0 0.55rem;
+    border-bottom: 0;
+  }
+
+  .nav-group > .nav-link::before,
+  .nav-group > .nav-link::after,
+  .nav-group > .nav-link.active::after,
+  .nav-group > .nav-link:hover::after {
+    display: none;
+  }
+
+  .nav-group > .nav-link.active,
+  .nav-group > .nav-link:hover {
+    opacity: 1;
+    text-shadow: none;
+    font-weight: 400;
+    letter-spacing: 0.03em;
   }
 
   .nav-dropdown {
     position: static;
     min-width: 0;
     width: 100%;
-    padding: 0.2rem 0 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.1rem;
+    gap: 0;
     border: 0;
-    border-top: 1px solid rgba(248, 242, 230, 0.16);
     background: transparent;
     box-shadow: none;
     backdrop-filter: none;
