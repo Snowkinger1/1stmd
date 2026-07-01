@@ -174,6 +174,10 @@ h3 {
   transition: opacity 160ms ease, text-shadow 160ms ease;
 }
 
+.nav-link-subpage {
+  display: none;
+}
+
 .nav-link.active,
 .nav-link:hover,
 .nav-group:hover > .nav-link,
@@ -183,6 +187,18 @@ h3 {
   letter-spacing: 0.03em;
   font-weight: 500;
   transition: font-weight 160ms ease;
+}
+
+body.page-home .nav-link[href="index.html"],
+body.page-faq .nav-link[href="faq.html"],
+body.page-boot-camp .nav-link[href="boot-camp.html"],
+body.page-rules .nav-link[href="rules.html"],
+body.page-manual .nav-link[href="manual.html"],
+body.page-stories .nav-link[href="archive.html"] {
+  opacity: 1;
+  text-shadow: 0 0 12px rgba(248, 242, 230, 0.4), 0 0 24px rgba(248, 242, 230, 0.2);
+  letter-spacing: 0.03em;
+  font-weight: 500;
 }
 
 .nav-link::after {
@@ -306,7 +322,13 @@ h3 {
 .nav-link.active::after,
 .nav-link:hover::after,
 .nav-group:hover > .nav-link::after,
-.nav-group:focus-within > .nav-link::after {
+.nav-group:focus-within > .nav-link::after,
+body.page-home .nav-link[href="index.html"]::after,
+body.page-faq .nav-link[href="faq.html"]::after,
+body.page-boot-camp .nav-link[href="boot-camp.html"]::after,
+body.page-rules .nav-link[href="rules.html"]::after,
+body.page-manual .nav-link[href="manual.html"]::after,
+body.page-stories .nav-link[href="archive.html"]::after {
   left: 0;
   right: 0;
   opacity: 1;
@@ -1125,33 +1147,29 @@ h2 {
   .nav-group {
     gap: 0.8rem;
     flex: 0 0 auto;
+    min-height: auto;
+  }
+
+  .nav-group > .nav-link::before {
+    display: none;
+  }
+
+  .nav-link-subpage {
+    display: inline-flex;
   }
 
   .nav-dropdown {
-    position: static;
-    min-width: 0;
-    padding: 0;
-    display: inline-flex;
-    gap: 0.8rem;
-    border: 0;
-    background: transparent;
-    box-shadow: none;
-    backdrop-filter: none;
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none;
+  }
+
+  .nav-link.active::after,
+  .nav-link:hover::after {
+    left: 0;
+    right: 0;
     opacity: 1;
-    visibility: visible;
-    transform: none;
-  }
-
-  .nav-group:hover .nav-dropdown,
-  .nav-group:focus-within .nav-dropdown {
-    transform: none;
-  }
-
-  .nav-dropdown a {
-    padding: 0.45rem 0;
-    border-radius: 0;
-    font-size: 0.94em;
-    opacity: 0.74;
   }
 
   .page-hero {
