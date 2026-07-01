@@ -26,6 +26,7 @@ body {
   background:
     radial-gradient(circle at top, rgba(255, 244, 217, 0.75), transparent 38%),
     linear-gradient(180deg, #efe4c9 0%, #e7dbc0 50%, #ede3d2 100%);
+  overflow-x: hidden;
 }
 
 body.page-home {
@@ -1034,14 +1035,59 @@ h2 {
 
 @media (max-width: 860px) {
   .site-nav {
-    align-items: center;
-    padding: 0.85rem 1rem;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    padding: 0.7rem 0.9rem;
+  }
+
+  .brand {
+    gap: 0.55rem;
+    font-size: 1.22rem;
+    line-height: 1;
+  }
+
+  .brand-logo {
+    width: 32px;
+    height: 32px;
   }
 
   .hero-content {
-    min-height: calc(100vh - 112px);
-    padding-top: 4vh;
+    min-height: calc(100vh - 132px);
+    padding-top: 8rem;
     padding-bottom: 4vh;
+  }
+
+  .hero {
+    min-height: 100svh;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-attachment: scroll;
+  }
+
+  h1 {
+    max-width: 100%;
+    font-size: 3rem;
+  }
+
+  h2,
+  .page-title {
+    font-size: 2.35rem;
+  }
+
+  .section {
+    padding: 3.5rem 1rem;
+  }
+
+  .section-heading {
+    margin-bottom: 1.45rem;
+  }
+
+  .intro-lead,
+  .section-heading p:last-child,
+  .page-subtitle {
+    font-size: 1rem;
+    line-height: 1.65;
   }
 
   .intro-grid,
@@ -1060,28 +1106,109 @@ h2 {
   }
 
   .nav-links {
-    justify-content: center;
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
     margin-left: 0;
-    gap: 1rem;
+    gap: 0.95rem;
+    overflow-x: auto;
+    padding: 0.15rem 0 0.25rem;
+    font-size: 1rem;
+    scrollbar-width: thin;
+  }
+
+  .nav-link,
+  .nav-dropdown a {
+    white-space: nowrap;
+  }
+
+  .nav-group {
+    gap: 0.8rem;
+    flex: 0 0 auto;
   }
 
   .nav-dropdown {
-    left: 0;
-    transform: translateX(0) translateY(-6px);
+    position: static;
+    min-width: 0;
+    padding: 0;
+    display: inline-flex;
+    gap: 0.8rem;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
   }
 
   .nav-group:hover .nav-dropdown,
   .nav-group:focus-within .nav-dropdown {
-    transform: translateX(0) translateY(0);
+    transform: none;
+  }
+
+  .nav-dropdown a {
+    padding: 0.45rem 0;
+    border-radius: 0;
+    font-size: 0.94em;
+    opacity: 0.74;
+  }
+
+  .page-hero {
+    min-height: 54svh;
+    padding: 9rem 1rem 3rem;
+    background-attachment: scroll;
+  }
+
+  .page-main {
+    padding: 2.5rem 0 4rem;
+  }
+
+  .content-grid,
+  .story-grid,
+  .stack-section,
+  .rules-document,
+  .unit-gallery .section-heading,
+  .gallery-grid,
+  .band .section-heading,
+  .band .timeline {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .card,
+  .panel,
+  .operation-card,
+  .timeline-item,
+  .join-box,
+  .info-card,
+  .story-card,
+  .faq-item,
+  .rule-block,
+  .manual-block {
+    padding: 1.15rem;
+  }
+
+  .gallery-item {
+    min-height: 220px;
+  }
+
+  .rules-section {
+    padding: 1.6rem 0;
+  }
+
+  .rules-section p,
+  .rules-section li {
+    font-size: 1rem;
+    line-height: 1.68;
   }
 
 }
 
 @media (max-width: 560px) {
   .hero {
-    min-height: auto;
-    padding-bottom: 4rem;
-    background-attachment: scroll;
+    min-height: 100svh;
+    padding-bottom: 3rem;
   }
 
   .page-hero,
@@ -1090,13 +1217,21 @@ h2 {
   .hero-rules,
   .hero-manual,
   .hero-stories {
-    min-height: 44vh;
-    padding-top: 7rem;
+    min-height: 58svh;
+    padding-top: 9.5rem;
+    padding-bottom: 2.4rem;
     background-attachment: scroll;
   }
 
   h1 {
-    font-size: 2.7rem;
+    font-size: 2.45rem;
+    line-height: 1;
+  }
+
+  h2,
+  .page-title {
+    font-size: 2rem;
+    line-height: 1.05;
   }
 
   .button {
@@ -1108,6 +1243,102 @@ h2 {
   }
 
   .nav-links {
-    font-size: 0.98rem;
+    font-size: 0.92rem;
+    gap: 0.8rem;
+  }
+
+  .brand {
+    font-size: 1.05rem;
+  }
+
+  .brand-logo {
+    width: 28px;
+    height: 28px;
+  }
+
+  .hero-actions {
+    gap: 0.7rem;
+  }
+
+  .eyebrow,
+  .section-kicker,
+  .page-kicker {
+    letter-spacing: 0.14em;
+    font-size: 0.72rem;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .timeline-item h3,
+  .info-card h3,
+  .story-card h3,
+  .faq-item h3,
+  .rule-block h3,
+  .manual-block h3 {
+    font-size: 1.2rem;
+  }
+
+  .gallery-grid {
+    gap: 0.75rem;
+  }
+
+  .gallery-item,
+  .gallery-item-large {
+    min-height: 230px;
+  }
+
+  .join-details {
+    gap: 0.75rem;
+  }
+
+  .rules-numbered,
+  .rules-document .rule-block ul {
+    padding-left: 1.1rem;
+  }
+
+  .site-footer {
+    padding: 1.25rem 1rem 2rem;
+  }
+}
+
+@media (max-width: 390px) {
+  .site-nav {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .brand span {
+    max-width: 220px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .nav-links {
+    font-size: 0.86rem;
+  }
+
+  h1 {
+    font-size: 2.15rem;
+  }
+
+  h2,
+  .page-title {
+    font-size: 1.78rem;
+  }
+
+  .section,
+  .content-grid,
+  .story-grid,
+  .stack-section,
+  .rules-document,
+  .unit-gallery .section-heading,
+  .gallery-grid,
+  .band .section-heading,
+  .band .timeline {
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
   }
 }
