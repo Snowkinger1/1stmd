@@ -1238,6 +1238,12 @@ h2 {
     width: 100%;
   }
 
+  .join-box > .button + .button,
+  .info-card > .button + .button,
+  .rule-block > .button + .button {
+    margin-top: 0.85rem;
+  }
+
   .hero-text {
     font-size: 1.08rem;
   }
