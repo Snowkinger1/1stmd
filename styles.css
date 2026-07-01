@@ -1108,10 +1108,12 @@ h2 {
   .nav-links {
     width: 100%;
     justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
     flex-wrap: nowrap;
     margin-left: 0;
-    gap: 0.95rem;
-    overflow-x: auto;
+    gap: 0.55rem;
+    overflow: visible;
     padding: 0.15rem 0 0.25rem;
     font-size: 1rem;
     scrollbar-width: thin;
@@ -1123,18 +1125,18 @@ h2 {
   }
 
   .nav-group {
-    display: inline-flex;
-    flex-direction: row;
-    align-items: center;
-    flex-wrap: nowrap;
-    gap: 0.35rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.15rem;
     flex: 0 0 auto;
+    width: 100%;
   }
 
   .nav-group > .nav-link {
-    display: inline-flex;
-    width: auto;
-    padding: 0.35rem 0.1rem 0.55rem;
+    display: block;
+    width: 100%;
+    padding: 0.35rem 0 0.55rem;
     border-bottom: 0;
   }
 
@@ -1156,14 +1158,14 @@ h2 {
   .nav-dropdown {
     position: static;
     min-width: 0;
-    width: auto;
+    width: 100%;
     padding: 0;
-    display: inline-flex;
-    flex-direction: row;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 0.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
     border: 0;
+    border-top: 1px solid rgba(248, 242, 230, 0.16);
     background: transparent;
     box-shadow: none;
     backdrop-filter: none;
@@ -1178,8 +1180,8 @@ h2 {
   }
 
   .nav-dropdown a {
-    width: auto;
-    padding: 0.35rem 0.2rem 0.5rem;
+    width: 100%;
+    padding: 0.55rem 0 0.7rem;
     border-radius: 0;
     border-bottom: 1px solid rgba(248, 242, 230, 0.16);
     font-size: 0.94em;
@@ -1187,8 +1189,13 @@ h2 {
   }
 
   .nav-dropdown a:last-child {
-    border-bottom: 1px solid rgba(248, 242, 230, 0.16);
-    padding-bottom: 0.5rem;
+    border-bottom: 0;
+    padding-bottom: 0.2rem;
+  }
+
+  .nav-dropdown a.active {
+    opacity: 1;
+    font-weight: 500;
   }
 
   .page-hero {
