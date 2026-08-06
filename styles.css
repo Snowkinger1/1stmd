@@ -520,6 +520,13 @@ h1 {
   box-shadow: 0 0 28px 10px rgba(35, 26, 16, 0.32);
 }
 
+.join-box > .button + .button,
+.info-card > .button + .button,
+.panel > .button + .button,
+.rule-block > .button + .button {
+  margin-top: 0.85rem;
+}
+
 .section {
   max-width: 1120px;
   margin: 0 auto;
